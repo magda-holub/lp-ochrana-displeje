@@ -1,0 +1,430 @@
+@import ../sass/partials/mixins
+@import ../sass/partials/colors
+@import ../sass/partials/reset
+@import ../sass/partials/switcher
+@import ../sass/partials/_swiper
+@import ../sass/partials/_carousel
+
+#landingpage
+    @include roboto
+    color: $grey6
+
+    .lp
+        &Header
+            @include container(65, 65, 65, 65)
+            @include flexOr
+            position: relative
+            background-image: url('https://i.alza.cz/Foto/or/lp/ochranaDispleje/img/header_bgr.png')
+            background-size: cover
+            background-position: center
+
+            &--content
+                @include flexOr
+                align-items: center
+
+            &--caption
+                @include flexVert
+                gap: 40px
+                position: relative
+                flex-basis: 50%
+
+                h1
+                    @include type(52px, 1.25, 700)
+                    @include roboto
+                    color: $white
+
+                p
+                    @include type(20px, 1.5, 400)
+                    @include roboto
+                    color: $blueAlza
+                    margin-top: 0
+
+                    span
+                        font-weight: 700
+
+            &--list
+                @include flexVert
+                gap: 12px
+                list-style: none
+                margin-left: 32px
+
+                li
+                    @include type(16px, 1.5, 400)
+                    @include roboto
+                    color: $white
+                    position: relative
+
+                    span
+                        font-weight: 700
+                    
+                    &::before
+                        background-image: url('https://i.alza.cz/Foto/or/lp/ochranaDispleje/img/marker.svg')
+                        content: ''
+                        width: 20px
+                        height: 20px
+                        position: absolute
+                        top: 12px
+                        left: -32px
+                        transform: translateY(-50%)
+                        background-repeat: no-repeat
+                        background-size: cover
+                        background-position: center
+
+            &--image
+                flex-basis: 50%
+                transform: translate(0, 4%) scale(1.1)
+
+            &--front
+                margin: auto
+
+            &--return
+                @include type(12px, 3.4, 400)
+                @include roboto
+                color: $blueMedia
+                text-decoration: underline
+                display: block
+                position: absolute
+                top: 8%
+                right: -10px
+                height: 40px
+                width: 180px
+                background-color: $white
+                border-radius: 2px
+                text-align: center
+                cursor:  pointer
+
+                &::before
+                    content: ''
+                    width: 0
+                    height: 0
+                    position: absolute
+                    right: 179px
+                    border-top: 20px solid transparent
+                    border-right: 21px solid $white
+                    border-bottom: 20px solid transparent
+
+                &:hover
+                    transform: translateX(-10px)
+
+        &Brands
+            @include container(30, 65, 30, 65)
+            @include flexOr
+            justify-content: space-between
+            background-color: $grey0
+
+            &--icon
+                height: 60px
+                width: 300px
+                transition: all 300ms ease-in-out
+
+                &:hover
+                    transform: scale(1.1)
+
+        &Guide
+            text-align: center
+
+            h2
+                @include type(30px, 1.25, 700)
+                @include roboto
+                color: $blueAlza
+
+                &:last-of-type
+                    margin-top: 15px
+
+                &:first-of-type
+                    margin-top: 65px
+
+            &--cards
+                @include container(65, 65, 65, 65)
+                @include flexOr
+                gap: 48px
+
+            &--card
+                flex: 1 1 0
+                @include flexVert
+                align-items: center
+                gap: 16px
+
+                p
+                    margin-top: 0
+                    @include roboto
+
+                    &.lpGuide--card
+                        &--num
+                            @include type(14px, 2.2, 500)
+                            height: 30px
+                            width: 30px
+                            background-color: $blueMedia
+                            border-radius: 50%
+                            color: $white
+
+                        &--headline
+                            @include type(16px, 1.25, 500)
+
+                        &--text
+                            @include type(14px, 1.25, 400)
+                            color: $grey6
+
+                            a
+                                color: $grey6
+
+                                &:hover
+                                    color: $blueMedia
+
+            &--icon
+                height: 64px
+                width: 64px
+
+            &--conditions
+                background-color: $grey0
+                height: 56px
+
+                a
+                    @include type(14px, 4, 500)
+                    color: $grey5
+
+                    &:hover
+                        color: $blueAlza
+
+        &Screen
+            @include container(65, 211, 65, 211)
+            @include flexVert
+            background: linear-gradient(to  bottom,  $white 70%, $grey0 100%)
+            align-items: center
+            gap: 48px
+            text-align: center
+
+            h2
+                @include type(30px, 1.25, 700)
+                @include roboto
+                color: $blueAlza
+
+            p
+                @include type(16px, 1.5, 400)
+                @include roboto
+                margin-top: 0
+
+            &--link
+                @include btnAppearance(58, 20)
+                width: 172px
+                background-color: $green
+                color: $white
+                @include btnStates($green)
+
+            &--img
+                box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15)
+
+        // &Carousel
+        //     &--buttons
+        //         padding-top: 64px
+        //         @include flexOr
+        //         justify-content: center
+        //         gap: 16px
+
+        //     &--link
+        //         @include btnAppearance(48, 14)
+        //         @include btnStates($grey3)
+        //         width: 192px
+        //         background-color: $grey3
+        //         color: $grey6
+
+
+        &Faq
+            @include container(65, 65, 65, 65)
+            @include flexVert
+            align-items: center
+            gap: 48px
+
+            h2
+                @include type(30px, 1.25, 700)
+                @include roboto
+                text-align: center
+                color: $blueAlza
+
+            &--units
+                @include flexVert
+                gap: 16px
+                width: 100%
+
+            &--box 
+                background-color: $white
+                border-radius: 8px
+                box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15)
+                padding: 16px
+                cursor: pointer
+                transition: box-shadow 500ms
+
+                &:hover
+                    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2)
+
+                &--handle 
+                    @include flexOr
+                    gap: 16px
+
+                    h3
+                        @include type(14px, 1.5, 500)
+                        @include roboto
+                        color: $blueMedia                
+
+                &--content 
+                    padding: 0 36px
+                    max-height: 0
+                    overflow: hidden
+                    will-change: max-height
+                    transition: opacity 500ms, max-height 500ms, padding 500ms
+                    opacity: 0
+
+                    p
+                        @include type(14px, 1.5, 400)
+                        @include roboto
+                        margin-top: 0
+
+                
+                &__active 
+                    .lpFaq--box--content 
+                        padding: 8px 36px 20px
+                        opacity: 1
+
+                    .lpFaq--box--icon
+                        transform: rotate(0deg)
+
+                &--icon
+                    width: 20px
+                    min-width: 20px
+                    height: 20px
+                    transform: rotate(180deg)
+                    transition: transform 500ms
+
+.layout-0 #landingpage
+    .lp
+        &Header
+            &--image
+                transform: translate(0, 4%) scale(1)
+
+            &--return
+                top: 4%
+
+        &Guide--card--headline
+            height: 30px
+
+@media only screen and (max-width: 1035px)
+    .mobile #landingpage,
+    .mobileapp #landingpage
+        .lp
+            &Header
+                &--return
+                    top: 4%
+
+            &Brands
+                &--icon
+                    width: 100%
+
+            &Guide
+                &--card
+                    &--headline
+                        height: 40px
+
+@media only screen and (max-width: 845px)
+    .mobile #landingpage,
+    .mobileapp #landingpage
+        .lp
+            &Header
+                @include container(65, 15, 65, 65)
+
+                &--image
+                    transform: translate(0, 4%) scale(1)
+                
+                &--caption
+                    flex-basis: 60%
+
+                    h1
+                        @include type(36px, 1.25, 700)
+                    
+                    p
+                        @include type(18px, 1.5, 400)
+
+                &--list
+                    li
+                        @include type(14px, 1.5, 400)
+
+                &--image
+                    flex-basis: 40%
+
+            &Guide
+                &--card
+                    &--headline
+                        height: 50px
+
+                h2
+                    padding-left: 25px
+                    padding-right: 25px
+                    
+            &Screen
+                @include container(65, 65, 65, 65)
+
+@media only screen and (max-width: 665px)
+    .mobile #landingpage,
+    .mobileapp #landingpage
+        .lp
+            &Header
+                @include container(105, 65, 65, 65)
+                background-position: right
+                display: block
+
+                &--content
+                    @include flexVert
+                    gap: 65px
+
+                &--caption
+                    flex-basis: 100%
+                    align-items: center
+
+                    h1
+                        padding-top: 24px
+
+                    h1, p
+                        text-align: center
+
+                &--image
+                    flex-basis: 100%
+
+                &--return
+                    top: 4.5%
+
+            &Brands
+                @include container(30, 0, 30, 0)
+
+            &Guide
+                &--cards
+                    flex-direction: column
+                    align-items: center
+                    gap: 65px
+
+                &--card
+                    max-width: 400px
+
+                    &--headline
+                        height: unset
+
+@media only screen and (max-width: 450px)
+    .mobile #landingpage,
+    .mobileapp #landingpage
+        .lp
+            &Header
+                @include container(105, 25, 65, 25)
+
+            &Brands
+                @include container(30, 25, 30, 25)
+                flex-direction: column
+                align-items: center
+                gap: 32px
+
+            &Guide
+                &--cards
+                    @include container(65, 25, 65, 25)
+
+            &Screen
+                @include container(65, 25, 65, 25)
+
+            &Faq
+                @include container(65, 25, 65, 25)

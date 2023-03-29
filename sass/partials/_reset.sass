@@ -1,0 +1,53 @@
+//reset bp containeru
+.category-description
+    padding: 0!important
+
+//alzaDialog default style in /CrossSell.htm
+.article .alzaDialogBody #landingpage ul li:not(.leftMenuItem)
+    background: none
+
+.alzaDialogBody h1
+    display: block
+
+.article .alzaDialogBody .lpFooter--wrapper
+    display: none
+
+#landingpage
+    display: block
+    position: relative
+    @include roboto
+    background-color: $white
+    color: $grey6
+
+    //reset
+    *, *::before, *::after
+        box-sizing: border-box
+
+    h1, h2, h3, h4, p, ul, ol, li, figure
+        margin: 0
+        padding: 0
+
+    input, button, textarea, select
+        font: inherit
+
+    .hidden
+        display: none!important
+
+    //alza styles reset
+    &.blank p
+            margin-top: 0
+
+    //links
+    a
+        transition: all 300ms ease-in-out
+
+    //imgs
+    img
+        display: block
+        height: auto
+        max-width: 100%
+        aspect-ratio: attr(width), attr(height)
+
+    //layout shift on h1
+    #h1c
+        display: none!important

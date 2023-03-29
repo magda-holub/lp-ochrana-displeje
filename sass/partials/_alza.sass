@@ -1,0 +1,37 @@
+#landingpage
+    .alza
+        &Btn
+            @include btnAppearance(42, 14)
+            padding-left: 24px
+            padding-right: 24px
+            background-color: $gold
+            color: $white
+            @include btnStates($gold)
+
+        &Container
+            &__10
+                padding-left: 165px
+                padding-right: 165px
+
+            &__12
+                padding-left: 65px
+                padding-right: 65px
+
+        &-section
+            padding-top: 64px
+
+// 3col
+.layout-0 #landingpage
+    .alza
+        &Container__10
+            padding-left: 15px
+            padding-right: 15px
+
+// mobile
+@media only screen and (max-width: 809px)
+    .mobile #landingpage,
+    .mobileapp #landingpage
+        .alza
+            &Container__10
+                padding-left: 15px
+                padding-right: 15px
