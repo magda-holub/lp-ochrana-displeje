@@ -10,7 +10,7 @@
   display: block;
 }
 
-.article .alzaDialogBody .lpFooter--wrapper {
+.article .alzaDialogBody .lpFooter__wrapper {
   display: none;
 }
 
@@ -51,23 +51,41 @@
 }
 
 #layout_switch {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   left: 20px;
   top: 20px;
   z-index: 100;
+  width: 180px;
+  height: 70px;
+  background: white;
+  box-shadow: 0px 2px 4px 0px rgba(128, 128, 128, 0.3);
+  border-radius: 5px;
 }
 #layout_switch button {
-  display: block;
-  color: #fff;
-  background: red;
-  font-size: 10px;
-  width: 24px;
-  height: 24px;
-  border-radius: 100%;
-  margin-bottom: 5px;
-  box-shadow: 0px 4px 10px 0px rgba(68, 3, 3, 0.3333333333);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  box-shadow: 0px 2px 4px 0px rgba(128, 128, 128, 0.5);
+  border-radius: 5px;
+  width: 45px;
+  height: 45px;
+  margin: 5px;
   cursor: pointer;
   border: none;
+}
+#layout_switch button .icon {
+  width: 30px;
+  height: 30px;
+  fill: #737373;
+}
+#layout_switch button.active {
+  box-shadow: inset 0px 2px 4px 0px rgba(128, 128, 128, 0.7);
 }
 
 #landingpage {
@@ -533,8 +551,7 @@ button.swiper-pagination-bullet {
 .swiper-zoom-container > svg {
   max-width: 100%;
   max-height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 .swiper-slide-zoomed {
@@ -651,6 +668,7 @@ button.swiper-pagination-bullet {
   height: 100%;
   background: #000;
   opacity: 0.6;
+  -webkit-filter: blur(50px);
   filter: blur(50px);
   z-index: 0;
 }
@@ -912,27 +930,27 @@ button.swiper-pagination-bullet {
   background-size: cover;
   background-position: center;
 }
-#landingpage .lpHeader--content {
+#landingpage .lpHeader__content {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
 }
-#landingpage .lpHeader--caption {
+#landingpage .lpHeader__caption {
   display: flex;
   flex-direction: column;
   gap: 40px;
   position: relative;
   flex-basis: 50%;
 }
-#landingpage .lpHeader--caption h1 {
+#landingpage .lpHeader__caption h1 {
   font-size: 52px;
   line-height: 65px;
   font-weight: 700;
   font-family: "Roboto", sans-serif;
   color: #ffffff;
 }
-#landingpage .lpHeader--caption p {
+#landingpage .lpHeader__caption p {
   font-size: 20px;
   line-height: 30px;
   font-weight: 400;
@@ -940,17 +958,17 @@ button.swiper-pagination-bullet {
   color: #00275b;
   margin-top: 0;
 }
-#landingpage .lpHeader--caption p span {
+#landingpage .lpHeader__caption p span {
   font-weight: 700;
 }
-#landingpage .lpHeader--list {
+#landingpage .lpHeader__list {
   display: flex;
   flex-direction: column;
   gap: 12px;
   list-style: none;
   margin-left: 32px;
 }
-#landingpage .lpHeader--list li {
+#landingpage .lpHeader__list li {
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -958,10 +976,10 @@ button.swiper-pagination-bullet {
   color: #ffffff;
   position: relative;
 }
-#landingpage .lpHeader--list li span {
+#landingpage .lpHeader__list li span {
   font-weight: 700;
 }
-#landingpage .lpHeader--list li::before {
+#landingpage .lpHeader__list li::before {
   background-image: url("https://i.alza.cz/Foto/or/lp/ochranaDispleje/img/marker.svg");
   content: "";
   width: 20px;
@@ -974,14 +992,14 @@ button.swiper-pagination-bullet {
   background-size: cover;
   background-position: center;
 }
-#landingpage .lpHeader--image {
+#landingpage .lpHeader__image {
   flex-basis: 50%;
   transform: translate(0, 4%) scale(1.1);
 }
-#landingpage .lpHeader--front {
+#landingpage .lpHeader__front {
   margin: auto;
 }
-#landingpage .lpHeader--return {
+#landingpage .lpHeader__return {
   font-size: 12px;
   line-height: 40.8px;
   font-weight: 400;
@@ -999,7 +1017,7 @@ button.swiper-pagination-bullet {
   text-align: center;
   cursor: pointer;
 }
-#landingpage .lpHeader--return::before {
+#landingpage .lpHeader__return::before {
   content: "";
   width: 0;
   height: 0;
@@ -1009,7 +1027,7 @@ button.swiper-pagination-bullet {
   border-right: 21px solid #ffffff;
   border-bottom: 20px solid transparent;
 }
-#landingpage .lpHeader--return:hover {
+#landingpage .lpHeader__return:hover {
   transform: translateX(-10px);
 }
 #landingpage .lpBrands {
@@ -1023,12 +1041,12 @@ button.swiper-pagination-bullet {
   justify-content: space-between;
   background-color: #f8f8f8;
 }
-#landingpage .lpBrands--icon {
+#landingpage .lpBrands__icon {
   height: 60px;
   width: 300px;
   transition: all 300ms ease-in-out;
 }
-#landingpage .lpBrands--icon:hover {
+#landingpage .lpBrands__icon:hover {
   transform: scale(1.1);
 }
 #landingpage .lpGuide {
@@ -1047,7 +1065,7 @@ button.swiper-pagination-bullet {
 #landingpage .lpGuide h2:first-of-type {
   margin-top: 65px;
 }
-#landingpage .lpGuide--cards {
+#landingpage .lpGuide__cards {
   padding-top: 65px;
   padding-right: 65px;
   padding-bottom: 65px;
@@ -1057,18 +1075,18 @@ button.swiper-pagination-bullet {
   flex-wrap: nowrap;
   gap: 48px;
 }
-#landingpage .lpGuide--card {
+#landingpage .lpGuide__card {
   flex: 1 1 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 16px;
 }
-#landingpage .lpGuide--card p {
+#landingpage .lpGuide__card p {
   margin-top: 0;
   font-family: "Roboto", sans-serif;
 }
-#landingpage .lpGuide--card p.lpGuide--card--num {
+#landingpage .lpGuide__card p.lpGuide__card__num {
   font-size: 14px;
   line-height: 30.8px;
   font-weight: 500;
@@ -1078,38 +1096,38 @@ button.swiper-pagination-bullet {
   border-radius: 50%;
   color: #ffffff;
 }
-#landingpage .lpGuide--card p.lpGuide--card--headline {
+#landingpage .lpGuide__card p.lpGuide__card__headline {
   font-size: 16px;
   line-height: 20px;
   font-weight: 500;
 }
-#landingpage .lpGuide--card p.lpGuide--card--text {
+#landingpage .lpGuide__card p.lpGuide__card__text {
   font-size: 14px;
   line-height: 17.5px;
   font-weight: 400;
   color: #212121;
 }
-#landingpage .lpGuide--card p.lpGuide--card--text a {
+#landingpage .lpGuide__card p.lpGuide__card__text a {
   color: #212121;
 }
-#landingpage .lpGuide--card p.lpGuide--card--text a:hover {
+#landingpage .lpGuide__card p.lpGuide__card__text a:hover {
   color: #0094e7;
 }
-#landingpage .lpGuide--icon {
+#landingpage .lpGuide__icon {
   height: 64px;
   width: 64px;
 }
-#landingpage .lpGuide--conditions {
+#landingpage .lpGuide__conditions {
   background-color: #f8f8f8;
   height: 56px;
 }
-#landingpage .lpGuide--conditions a {
+#landingpage .lpGuide__conditions a {
   font-size: 14px;
   line-height: 56px;
   font-weight: 500;
   color: #a4a4a4;
 }
-#landingpage .lpGuide--conditions a:hover {
+#landingpage .lpGuide__conditions a:hover {
   color: #00275b;
 }
 #landingpage .lpScreen {
@@ -1138,7 +1156,7 @@ button.swiper-pagination-bullet {
   font-family: "Roboto", sans-serif;
   margin-top: 0;
 }
-#landingpage .lpScreen--link {
+#landingpage .lpScreen__link {
   border-radius: 4px;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
   height: 58px;
@@ -1155,19 +1173,19 @@ button.swiper-pagination-bullet {
   background-color: #A1C900;
   color: #ffffff;
 }
-#landingpage .lpScreen--link:hover {
+#landingpage .lpScreen__link:hover {
   background-color: #88aa00;
   box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.3);
 }
-#landingpage .lpScreen--link:active {
+#landingpage .lpScreen__link:active {
   background-color: #708c00;
   box-shadow: none;
 }
-#landingpage .lpScreen--link__disabled {
+#landingpage .lpScreen__link--disabled {
   background-color: rgba(161, 201, 0, 0.5);
   box-shadow: none;
 }
-#landingpage .lpScreen--img {
+#landingpage .lpScreen__img {
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
 }
 #landingpage .lpFaq {
@@ -1188,13 +1206,13 @@ button.swiper-pagination-bullet {
   text-align: center;
   color: #00275b;
 }
-#landingpage .lpFaq--units {
+#landingpage .lpFaq__units {
   display: flex;
   flex-direction: column;
   gap: 16px;
   width: 100%;
 }
-#landingpage .lpFaq--box {
+#landingpage .lpFaq__box {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
@@ -1202,23 +1220,23 @@ button.swiper-pagination-bullet {
   cursor: pointer;
   transition: box-shadow 500ms;
 }
-#landingpage .lpFaq--box:hover {
+#landingpage .lpFaq__box:hover {
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
 }
-#landingpage .lpFaq--box--handle {
+#landingpage .lpFaq__box__handle {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   gap: 16px;
 }
-#landingpage .lpFaq--box--handle h3 {
+#landingpage .lpFaq__box__handle h3 {
   font-size: 14px;
   line-height: 21px;
   font-weight: 500;
   font-family: "Roboto", sans-serif;
   color: #0094e7;
 }
-#landingpage .lpFaq--box--content {
+#landingpage .lpFaq__box__content {
   padding: 0 36px;
   max-height: 0;
   overflow: hidden;
@@ -1226,21 +1244,21 @@ button.swiper-pagination-bullet {
   transition: opacity 500ms, max-height 500ms, padding 500ms;
   opacity: 0;
 }
-#landingpage .lpFaq--box--content p {
+#landingpage .lpFaq__box__content p {
   font-size: 14px;
   line-height: 21px;
   font-weight: 400;
   font-family: "Roboto", sans-serif;
   margin-top: 0;
 }
-#landingpage .lpFaq--box__active .lpFaq--box--content {
+#landingpage .lpFaq__box--active .lpFaq__box__content {
   padding: 8px 36px 20px;
   opacity: 1;
 }
-#landingpage .lpFaq--box__active .lpFaq--box--icon {
+#landingpage .lpFaq__box--active .lpFaq__box__icon {
   transform: rotate(0deg);
 }
-#landingpage .lpFaq--box--icon {
+#landingpage .lpFaq__box__icon {
   width: 20px;
   min-width: 20px;
   height: 20px;
@@ -1248,27 +1266,27 @@ button.swiper-pagination-bullet {
   transition: transform 500ms;
 }
 
-.layout-0 #landingpage .lpHeader--image {
+.layout-0 #landingpage .lpHeader__image {
   transform: translate(0, 4%) scale(1);
 }
-.layout-0 #landingpage .lpHeader--return {
+.layout-0 #landingpage .lpHeader__return {
   top: 4%;
 }
-.layout-0 #landingpage .lpGuide--card--headline {
-  height: 30px;
+.layout-0 #landingpage .lpGuide__card__headline {
+  height: 40px;
 }
 
 @media only screen and (max-width: 1035px) {
-  .mobile #landingpage .lpHeader--return,
-  .mobileapp #landingpage .lpHeader--return {
+  .mobile #landingpage .lpHeader__return,
+  .mobileapp #landingpage .lpHeader__return {
     top: 4%;
   }
-  .mobile #landingpage .lpBrands--icon,
-  .mobileapp #landingpage .lpBrands--icon {
+  .mobile #landingpage .lpBrands__icon,
+  .mobileapp #landingpage .lpBrands__icon {
     width: 100%;
   }
-  .mobile #landingpage .lpGuide--card--headline,
-  .mobileapp #landingpage .lpGuide--card--headline {
+  .mobile #landingpage .lpGuide__card__headline,
+  .mobileapp #landingpage .lpGuide__card__headline {
     height: 40px;
   }
 }
@@ -1280,38 +1298,38 @@ button.swiper-pagination-bullet {
     padding-bottom: 65px;
     padding-left: 65px;
   }
-  .mobile #landingpage .lpHeader--image,
-  .mobileapp #landingpage .lpHeader--image {
+  .mobile #landingpage .lpHeader__image,
+  .mobileapp #landingpage .lpHeader__image {
     transform: translate(0, 4%) scale(1);
   }
-  .mobile #landingpage .lpHeader--caption,
-  .mobileapp #landingpage .lpHeader--caption {
+  .mobile #landingpage .lpHeader__caption,
+  .mobileapp #landingpage .lpHeader__caption {
     flex-basis: 60%;
   }
-  .mobile #landingpage .lpHeader--caption h1,
-  .mobileapp #landingpage .lpHeader--caption h1 {
+  .mobile #landingpage .lpHeader__caption h1,
+  .mobileapp #landingpage .lpHeader__caption h1 {
     font-size: 36px;
     line-height: 45px;
     font-weight: 700;
   }
-  .mobile #landingpage .lpHeader--caption p,
-  .mobileapp #landingpage .lpHeader--caption p {
+  .mobile #landingpage .lpHeader__caption p,
+  .mobileapp #landingpage .lpHeader__caption p {
     font-size: 18px;
     line-height: 27px;
     font-weight: 400;
   }
-  .mobile #landingpage .lpHeader--list li,
-  .mobileapp #landingpage .lpHeader--list li {
+  .mobile #landingpage .lpHeader__list li,
+  .mobileapp #landingpage .lpHeader__list li {
     font-size: 14px;
     line-height: 21px;
     font-weight: 400;
   }
-  .mobile #landingpage .lpHeader--image,
-  .mobileapp #landingpage .lpHeader--image {
+  .mobile #landingpage .lpHeader__image,
+  .mobileapp #landingpage .lpHeader__image {
     flex-basis: 40%;
   }
-  .mobile #landingpage .lpGuide--card--headline,
-  .mobileapp #landingpage .lpGuide--card--headline {
+  .mobile #landingpage .lpGuide__card__headline,
+  .mobileapp #landingpage .lpGuide__card__headline {
     height: 50px;
   }
   .mobile #landingpage .lpGuide h2,
@@ -1337,32 +1355,32 @@ button.swiper-pagination-bullet {
     background-position: right;
     display: block;
   }
-  .mobile #landingpage .lpHeader--content,
-  .mobileapp #landingpage .lpHeader--content {
+  .mobile #landingpage .lpHeader__content,
+  .mobileapp #landingpage .lpHeader__content {
     display: flex;
     flex-direction: column;
     gap: 65px;
   }
-  .mobile #landingpage .lpHeader--caption,
-  .mobileapp #landingpage .lpHeader--caption {
+  .mobile #landingpage .lpHeader__caption,
+  .mobileapp #landingpage .lpHeader__caption {
     flex-basis: 100%;
     align-items: center;
   }
-  .mobile #landingpage .lpHeader--caption h1,
-  .mobileapp #landingpage .lpHeader--caption h1 {
+  .mobile #landingpage .lpHeader__caption h1,
+  .mobileapp #landingpage .lpHeader__caption h1 {
     padding-top: 24px;
   }
-  .mobile #landingpage .lpHeader--caption h1, .mobile #landingpage .lpHeader--caption p,
-  .mobileapp #landingpage .lpHeader--caption h1,
-  .mobileapp #landingpage .lpHeader--caption p {
+  .mobile #landingpage .lpHeader__caption h1, .mobile #landingpage .lpHeader__caption p,
+  .mobileapp #landingpage .lpHeader__caption h1,
+  .mobileapp #landingpage .lpHeader__caption p {
     text-align: center;
   }
-  .mobile #landingpage .lpHeader--image,
-  .mobileapp #landingpage .lpHeader--image {
+  .mobile #landingpage .lpHeader__image,
+  .mobileapp #landingpage .lpHeader__image {
     flex-basis: 100%;
   }
-  .mobile #landingpage .lpHeader--return,
-  .mobileapp #landingpage .lpHeader--return {
+  .mobile #landingpage .lpHeader__return,
+  .mobileapp #landingpage .lpHeader__return {
     top: 4.5%;
   }
   .mobile #landingpage .lpBrands,
@@ -1372,18 +1390,18 @@ button.swiper-pagination-bullet {
     padding-bottom: 30px;
     padding-left: 0px;
   }
-  .mobile #landingpage .lpGuide--cards,
-  .mobileapp #landingpage .lpGuide--cards {
+  .mobile #landingpage .lpGuide__cards,
+  .mobileapp #landingpage .lpGuide__cards {
     flex-direction: column;
     align-items: center;
     gap: 65px;
   }
-  .mobile #landingpage .lpGuide--card,
-  .mobileapp #landingpage .lpGuide--card {
+  .mobile #landingpage .lpGuide__card,
+  .mobileapp #landingpage .lpGuide__card {
     max-width: 400px;
   }
-  .mobile #landingpage .lpGuide--card--headline,
-  .mobileapp #landingpage .lpGuide--card--headline {
+  .mobile #landingpage .lpGuide__card__headline,
+  .mobileapp #landingpage .lpGuide__card__headline {
     height: unset;
   }
 }
@@ -1405,8 +1423,8 @@ button.swiper-pagination-bullet {
     align-items: center;
     gap: 32px;
   }
-  .mobile #landingpage .lpGuide--cards,
-  .mobileapp #landingpage .lpGuide--cards {
+  .mobile #landingpage .lpGuide__cards,
+  .mobileapp #landingpage .lpGuide__cards {
     padding-top: 65px;
     padding-right: 25px;
     padding-bottom: 65px;
@@ -1426,4 +1444,4 @@ button.swiper-pagination-bullet {
     padding-bottom: 65px;
     padding-left: 25px;
   }
-}/*# sourceMappingURL=main.css.map */
+}
