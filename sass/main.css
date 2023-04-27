@@ -710,7 +710,7 @@ button.swiper-pagination-bullet {
   position: relative;
   background: linear-gradient(to bottom, #ffffff 70%, #f8f8f8 100%);
   border-radius: 4px;
-  padding: 60px;
+  padding: 60px 40px;
   overflow: hidden;
 }
 #landingpage .lpCarousel .swiper h2 {
@@ -734,7 +734,7 @@ button.swiper-pagination-bullet {
   margin: 0 auto;
   height: auto;
 }
-#landingpage .lpCarousel .swiper a.swiper-slide {
+#landingpage .lpCarousel .swiper .swiper-slide {
   border-radius: 6px;
   cursor: pointer;
   height: auto;
@@ -748,7 +748,7 @@ button.swiper-pagination-bullet {
   justify-content: space-between;
   text-decoration: none;
 }
-#landingpage .lpCarousel .swiper a.swiper-slide p {
+#landingpage .lpCarousel .swiper .swiper-slide p {
   font-size: 14px;
   line-height: 21px;
   font-weight: 500;
@@ -757,27 +757,27 @@ button.swiper-pagination-bullet {
   color: #212121;
   transition: all 300ms ease-in-out;
 }
-#landingpage .lpCarousel .swiper a.swiper-slide p.swiper-product-name {
+#landingpage .lpCarousel .swiper .swiper-slide p.swiper-product-name {
   min-height: 64px;
 }
-#landingpage .lpCarousel .swiper a.swiper-slide .swiper-product-img {
+#landingpage .lpCarousel .swiper .swiper-slide .swiper-product-img {
   margin-bottom: 10px;
 }
-#landingpage .lpCarousel .swiper a.swiper-slide p.swiper-product-cprice {
+#landingpage .lpCarousel .swiper .swiper-slide p.swiper-product-cprice {
   font-size: 14px;
   line-height: 21px;
   font-weight: 400;
 }
-#landingpage .lpCarousel .swiper a.swiper-slide p.swiper-product-cprice.noValue {
+#landingpage .lpCarousel .swiper .swiper-slide p.swiper-product-cprice.noValue {
   display: none;
 }
-#landingpage .lpCarousel .swiper a.swiper-slide p.swiper-product-price {
+#landingpage .lpCarousel .swiper .swiper-slide p.swiper-product-price {
   color: #F00000;
   font-size: 14px;
   line-height: 21px;
   font-weight: 400;
 }
-#landingpage .lpCarousel .swiper a.swiper-slide:hover {
+#landingpage .lpCarousel .swiper .swiper-slide:hover {
   box-shadow: 0 2px 6px 0px rgba(0, 0, 0, 0.15);
 }
 #landingpage .lpCarousel .swiper-product-prices {
