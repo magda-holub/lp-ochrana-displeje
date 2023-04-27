@@ -7,7 +7,7 @@
         position: relative
         background: linear-gradient(to  bottom,  $white 70%, $grey0 100%)
         border-radius: 4px
-        padding: 60px
+        padding: 60px 40px
         overflow: hidden
 
         h2
@@ -32,7 +32,7 @@
             height: auto
         
 
-        a.swiper-slide
+        .swiper-slide
             border-radius: 6px
             cursor: pointer
             height: auto
@@ -201,7 +201,7 @@
                 .swiper-pagination
                     display: none
 
-                a.swiper-slide:hover
+                .swiper-slide:hover
                     box-shadow: none
 
 @media only screen and (max-width: 560px)
@@ -209,8 +209,5 @@
     .mobileapp #landingpage
         .lpCarousel
             .swiper
-                a.swiper-slide
+                .swiper-slide
                     justify-content: flex-start
-
-                    p.swiper-product-name
-                        min-height: unset
